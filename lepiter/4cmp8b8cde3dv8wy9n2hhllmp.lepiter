@@ -171,14 +171,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-26T15:01:57.648259+02:00"
+						"dateAndTimeString" : "2025-08-26T15:19:52.020969+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
 					"uidString" : "lY73XaX5DQCUqO/XAbd9SQ=="
 				},
-				"code" : "ghostPost := GtGhostPost new.\rghostPost title: thisPage title.\rghostPost html: html.\rpostJson := String streamContents: [:s |\r\ts nextPutAll: '{\n    \"posts\": [\n        {\n            \"title\": \"'.\r    s nextPutAll:ghostPost title,'\",\n            \"html\": \"'.\r    s nextPutAll: ghostPost quotedHtml,'\",\n            \"status\": \"draft\"\n        }\n    ]\n} \r'].\rclient := ghostInstance client.\rclient url: 'https://www.domeinmodel.nl/ghost/api/admin/posts'.\r client contents: postJson.\rclient contentType: 'application/json'.\r client post"
+				"code" : "ghostPost := GtGhostPost new.\rghostPost title: thisPage title.\rghostPost html: html.\rpostJson := String streamContents: [:s |\r\ts nextPutAll: '{\n    \"posts\": [\n        {\n            \"title\": \"'.\r    s nextPutAll:ghostPost title,'\",\n            \"html\": \"<p>'.\r    s nextPutAll: thisPage children first text asString,'</p>\",\n            \"status\": \"draft\"\n        }\n    ]\n} \r'].\rclient := ghostInstance client.\rclient url: 'https://www.domeinmodel.nl/ghost/api/admin/posts/?source=html'.\r client contents: postJson.\rclient contentType: 'application/json'.\r client post"
 			}
 		]
 	},
