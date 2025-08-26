@@ -4,10 +4,22 @@ Class {
 	#instVars : [
 		'credentials',
 		'token',
-		'exp'
+		'exp',
+		'baseUrl',
+		'client'
 	],
 	#category : #'GtGhost-Model'
 }
+
+{ #category : #accessing }
+GtGhostInstance >> client [
+	^ client
+]
+
+{ #category : #accessing }
+GtGhostInstance >> client: anObject [
+	client := anObject
+]
 
 { #category : #accessing }
 GtGhostInstance >> createToken [
@@ -37,19 +49,38 @@ GtGhostInstance >> readCredentialsFrom: aFileName [
 ]
 
 { #category : #accessing }
+GtGhostInstance >> refreshToken [
+	token := self createToken.
+	client request setAuthorization: 'Ghost ' , token compactSerialized.
+
+]
+
+{ #category : #accessing }
+GtGhostInstance >> setUpConnection [
+	"assumes credentials are set up"
+	token := self createToken.
+	client := ZnClient new.
+	baseUrl:= 'https://www.' , self site , '/ghost/api/'.
+	client request setAuthorization: 'Ghost ' , token compactSerialized.
+
+]
+
+{ #category : #accessing }
 GtGhostInstance >> site [
 	^(Character space split: credentials) first
 ]
 
 { #category : #accessing }
 GtGhostInstance >> testConnection [
-	| client |
 	credentials isEmptyOrNil
 		ifTrue: [ ^ Exception signal: 'Credentials are not set' ].
-	token := self createToken.
-	client := ZnClient new.
-	client url: 'https://www.' , self site , '/ghost/api/admin/posts'.
-	client request setAuthorization: 'Ghost ' , token compactSerialized.
+	self setUpConnection. 
+	client url: baseUrl,'/admin/posts'.
 	^client get.
 
+]
+
+{ #category : #'as yet unclassified' }
+GtGhostInstance >> tokenStillValid [
+	^ZTimestamp nowTruncated < exp
 ]

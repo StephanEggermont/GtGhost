@@ -18,6 +18,43 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-26T10:39:50.071628+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-26T10:39:59.263839+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "4LYrWqL5DQCTRCPhAW1zaw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Ghost is a platform for web publications, supporting blogs, email newsletters and rss feeds, and integrating with federated platforms. It is useful as an information radiator in moldable development with GToolkit. "
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
 						"dateAndTimeString" : "2025-08-26T10:34:32.766816+02:00"
 					}
 				},
@@ -29,7 +66,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-26T10:39:40.241069+02:00"
+						"dateAndTimeString" : "2025-08-26T14:14:16.847654+02:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +76,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Ghost is a platform for web publications, supporting blogs, email newsletters and rss feeds, and integrating with federated platforms. It is useful as an information radiator in moldable development.\n[[Setting up]]"
+				"string" : "[[Setting up]]\n[[Creating a post from a lePiter page]]"
 			}
 		]
 	},

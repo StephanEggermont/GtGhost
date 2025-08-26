@@ -66,7 +66,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-26T10:39:50.076431+02:00"
+						"dateAndTimeString" : "2025-08-26T14:14:49.308754+02:00"
 					}
 				},
 				"uid" : {
@@ -76,7 +76,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "[[Setting up]]"
+				"string" : "[[Setting up]]\n[[Creating a post from a Lepiter page]]"
 			}
 		]
 	},
