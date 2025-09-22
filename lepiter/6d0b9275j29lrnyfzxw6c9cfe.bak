@@ -66,7 +66,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-17T13:37:17.98571+02:00"
+						"dateAndTimeString" : "2025-09-20T10:50:19.957382+02:00"
 					}
 				},
 				"uid" : {
@@ -76,7 +76,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "[[Setting up]]\n[[Creating a post from a Lepiter page]]\n[[Logging in into my "
+				"string" : "[[Setting up]]\n[[Creating a post from a Lepiter page]]\n[[Logging in into my ghost database to reconnect sessions]]\n[[Posting a text with"
 			}
 		]
 	},
