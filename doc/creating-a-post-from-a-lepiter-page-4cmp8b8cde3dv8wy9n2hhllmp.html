@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Creating a post from a Lepiter page</title>
+
+    <!-- browser setup -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+    <!-- page meta information -->
+    <meta name="description" content="First connect to the Ghost instance.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="gtoolkit book">
+    <meta property="og:title" content="Creating a post from a Lepiter page">
+    <meta property="og:url" content="https://book.gtoolkit.com/creating-a-post-from-a-lepiter-page-4cmp8b8cde3dv8wy9n2hhllmp.html">
+    <meta property="og:description" content="First connect to the Ghost instance.">
+
+    <!-- CSS styles -->
+    <link rel="stylesheet" href="assets/vendor/awesomefonts/css/all.css">
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/v1/src/css/lepiter-common.css">
+    <link rel="stylesheet" href="assets/v1/src/css/lepiter-snippets.css">
+    <link rel="stylesheet" href="assets/v1/src/css/vs.css">
+</head>
+<body>
+
+    <div class="content">
+        <div class="container min-height py-5 le-main-container">
+            <main>
+                <h1 class="le-main-title">Creating a post from a Lepiter page</h1>
+
+                <!-- page content start -->
+
+                <div class="snippet textual-snippet text-snippet paragraphWidth">  <p>First connect to the Ghost instance.  </p></div><div class="snippet textual-snippet code-snippet pharo-snippet fullWidth">  <pre class="no_bottom_margin">ghostInstance := GtGhostInstance new.ghostInstance readCredentialsFrom: (FileLocator home /'.ghost/.integrations/ghost') pathString.ghostInstance setUpConnection.  </pre></div><div class="snippet textual-snippet text-snippet paragraphWidth">  <p>Get the contents from the current Lepiter page, and convert that to Ghosts lexical format  </p></div><div class="snippet textual-snippet code-snippet pharo-snippet fullWidth">  <pre class="no_bottom_margin">thisPage := thisSnippet parent.database := thisPage database.context := LeHtmlContext new			page: thisPage;			database: database.html := LeHtmlPageExporter new			context: context;			piece: LeHtmlGtBookPiece gtSinglePage;			contents.  </pre></div><div class="snippet textual-snippet code-snippet pharo-snippet fullWidth">  <pre class="no_bottom_margin">ghostPost := GtGhostPost new.ghostPost title: thisPage title.ghostPost html: html.postJson := String streamContents: [:s |	s nextPutAll: '{
+    "posts": [
+        {
+            "title": "'.    s nextPutAll:ghostPost title,'",
+            "html": "&lt;p>'.    s nextPutAll: thisPage children first text asString,'&lt;/p>",
+            "status": "draft"
+        }
+    ]
+} '].client := ghostInstance client.client url: 'https://www.domeinmodel.nl/ghost/api/admin/posts/?source=html'. client contents: postJson.client contentType: 'application/json'. client post  </pre></div>
+
+                <!-- page content end -->
+            </main>
+        </div>
+    </div>
+
+    <footer class="text-center py-5 le-footer">
+        <p class="le-footer-credits">
+            Powered by <a class="le-footer-link" href="https://lepiter.com">Lepiter</a> | <a class="le-footer-link" href="https://feenk.com/privacy">Privacy Policy</a>
+        </p>
+    </footer>
+
+    <!-- scripts -->
+    <script type="text/javascript" src="assets/vendor/jquery/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/v1/src/js/datefns.min.js"></script>
+    <script type="text/javascript" src="assets/v1/src/js/highlight.pack.js"></script>
+    <script type="text/javascript" src="assets/v1/src/js/lepiter-common.js"></script>
+    <script type="text/javascript" src="assets/v1/src/js/lepiter-snippets.js"></script>
+    <script type="text/javascript" src="assets/v1/src/js/lepiter-time.js"></script>
+</body>
+</html>

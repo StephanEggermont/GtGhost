@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Posting a text with a visualization</title>
+
+    <!-- browser setup -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+    <!-- page meta information -->
+    <meta name="description" content="In my blog post about an ERP migration project,  I used a nested polymetric view to show  relationships between Cobol files and their imports. That is a very simple visualization to make, and might be useful for others wanting to start using GToolkit. So let's recreate that visualization on a different project.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="gtoolkit book">
+    <meta property="og:title" content="Posting a text with a visualization">
+    <meta property="og:url" content="https://book.gtoolkit.com/posting-a-text-with-a-visualization-797sjf55tf70vsluuvzv384zz.html">
+    <meta property="og:description" content="In my blog post about an ERP migration project,  I used a nested polymetric view to show  relationships between Cobol files and their imports. That is a very simple visualization to make, and might be useful for others wanting to start using GToolkit. So let's recreate that visualization on a different project.">
+
+    <!-- CSS styles -->
+    <link rel="stylesheet" href="assets/vendor/awesomefonts/css/all.css">
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/v1/src/css/lepiter-common.css">
+    <link rel="stylesheet" href="assets/v1/src/css/lepiter-snippets.css">
+    <link rel="stylesheet" href="assets/v1/src/css/vs.css">
+</head>
+<body>
+
+    <div class="content">
+        <div class="container min-height py-5 le-main-container">
+            <main>
+                <h1 class="le-main-title">Posting a text with a visualization</h1>
+
+                <!-- page content start -->
+
+                <div class="snippet textual-snippet text-snippet paragraphWidth">  <p>In my blog post about an ERP migration project,  I used a nested polymetric view to show  relationships between Cobol files and their imports. That is a very simple visualization to make, and might be useful for others wanting to start using GToolkit. So let's recreate that visualization on a different project.  </p></div><div class="snippet textual-snippet text-snippet paragraphWidth">  <p>I downloaded the Jitsi project. There are lots of different files in there. The javascript ones can be recognized by their extension.  </p></div><div class="snippet textual-snippet code-snippet pharo-snippet fullWidth">  <pre class="no_bottom_margin">projectDirectory := FileLocator home / 'Sensus/jitsi/jitsi-meet'.javaScriptFiles := projectDirectory allChildrenMatching: '*.js'.  </pre></div><div class="snippet textual-snippet text-snippet paragraphWidth">  <p>The same can be done for all extensions at the same time  </p></div><div class="snippet textual-snippet code-snippet pharo-snippet fullWidth">  <pre class="no_bottom_margin">filesByTypes := Dictionary new.projectDirectory allFiles do: [:each|	filesByTypes at: each extension 		ifPresent: [:value | value add: each] 		ifAbsentPut: [OrderedCollection with: each]].filesByTypes  </pre></div><div class="snippet textual-snippet text-snippet paragraphWidth">  <p>Let's start with simply visualizing the javascript files in a grid. We noticed that there are empty files, so let's make them stand out.  </p></div><div class="snippet textual-snippet code-snippet pharo-snippet fullWidth">  <pre class="no_bottom_margin">view := GtMondrian new.view nodes	stencil: [ :file |		BlElement new			size: 10@10;			border: (				(file contents size =0) 					ifTrue: [Color red]					ifFalse: [Color green])];	with: javaScriptFiles.view layout grid.view	  </pre></div><div class="snippet textual-snippet text-snippet paragraphWidth">  <p>These javascript files contain import statements that look like  </p></div><div class="snippet textual-snippet code-snippet pharo-snippet fullWidth">  <pre class="no_bottom_margin">sampleBlockOfImportStatements := 'import React from ''react'';
+import ReactDOM from ''react-dom'';
+
+import { browser } from ''../../../react/features/base/lib-jitsi-meet'';'.  </pre></div><div class="snippet textual-snippet text-snippet paragraphWidth">  <p>Let's parse a line like that.  </p></div><div class="snippet textual-snippet code-snippet pharo-snippet fullWidth">  <pre class="no_bottom_margin">importLineParser := 'import' asPParser, #any asPParser starLazy flatten, 'from' asPParser, #any asPParser starLazy flatten, $; asPParser ==> [:items | Array with: items second with: items fourth].importLineParser parse: 'import ''hkkkl from bla;'.importParser := importLineParser sea star ==> [:items | items collect: [:line | line second]].importParser parse: sampleBlockOfImportStatements  </pre></div><div class="snippet textual-snippet text-snippet paragraphWidth">  <p>Other approach, try parsing the javascript files.  </p></div><div class="snippet textual-snippet code-snippet pharo-snippet fullWidth">  <pre class="no_bottom_margin">parsedFiles := javaScriptFiles collect: [:fileName | fileName -> (JSParser parseWithErrors: fileName contents) ]  </pre></div><div class="snippet textual-snippet text-snippet paragraphWidth">  <p>But the importParser is good enough for this, let's apply that.  </p></div><div class="snippet textual-snippet code-snippet pharo-snippet fullWidth">  <pre class="no_bottom_margin">pp2ParsedFiles := javaScriptFiles collect: [:fileName | fileName -> (importParser parse: fileName contents) ]  </pre></div><div class="snippet textual-snippet text-snippet paragraphWidth">  <p>Now we can show for each javascript file a tiny rectangle for each import. If there are none, make sure to show a rectangle anyway.  </p></div><div class="snippet textual-snippet code-snippet pharo-snippet fullWidth">  <pre class="no_bottom_margin">view := GtMondrian new.view nodes	stencil: [ :association |		BlElement new			padding: (BlInsets all: 3);			border: (				(association key contents size =0) 					ifTrue: [Color red]					ifFalse: [Color green])];	with: (pp2ParsedFiles sorted: [:a :b | a value size > b value size])	forEach: [:association | view nodes 					shape: [ :me | BlElement new 						background: Color green;						size: 5@5;						yourself  ];					with: (association value).					view layout grid.					association value size = 0 ifTrue: [						view nodes shape: [:me | BlElement new 						background: Color red;						margin: (BlInsets all: 3);						size: 5@5;						yourself  ];						with: #('zero').					]].view layout grid.view	  </pre></div><div class="snippet textual-snippet text-snippet paragraphWidth">  <p>Easiest way to do name lookup would be to just put the files in a Dictionary on basename. Without the .js extension, and the path. That would be good enough if there are no or only a few name collisions. If I put the names in a set, I can easily see if that is the case.  </p></div><div class="snippet textual-snippet code-snippet pharo-snippet fullWidth">  <pre class="no_bottom_margin">(javaScriptFiles collect: [:each | each basenameWithoutExtension]) asSet  </pre></div><div class="snippet textual-snippet text-snippet paragraphWidth">  <p>That's a pity, that set is not even half as large as the full list. We'll need to spend some more time to build a lookup function.  </p></div>
+
+                <!-- page content end -->
+            </main>
+        </div>
+    </div>
+
+    <footer class="text-center py-5 le-footer">
+        <p class="le-footer-credits">
+            Powered by <a class="le-footer-link" href="https://lepiter.com">Lepiter</a> | <a class="le-footer-link" href="https://feenk.com/privacy">Privacy Policy</a>
+        </p>
+    </footer>
+
+    <!-- scripts -->
+    <script type="text/javascript" src="assets/vendor/jquery/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/v1/src/js/datefns.min.js"></script>
+    <script type="text/javascript" src="assets/v1/src/js/highlight.pack.js"></script>
+    <script type="text/javascript" src="assets/v1/src/js/lepiter-common.js"></script>
+    <script type="text/javascript" src="assets/v1/src/js/lepiter-snippets.js"></script>
+    <script type="text/javascript" src="assets/v1/src/js/lepiter-time.js"></script>
+</body>
+</html>

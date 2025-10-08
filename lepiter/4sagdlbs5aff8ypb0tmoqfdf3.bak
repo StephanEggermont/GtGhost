@@ -18,7 +18,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-26T10:39:50.071628+02:00"
+						"dateAndTimeString" : "2025-10-08T12:06:14.279588+02:00"
 					}
 				},
 				"editEmail" : {
@@ -29,20 +29,20 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-26T10:39:59.263839+02:00"
+						"dateAndTimeString" : "2025-10-08T12:10:26.339263+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "4LYrWqL5DQCTRCPhAW1zaw=="
+					"uidString" : "uZVZkgT9DQCSLGBeA7PWUA=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Ghost is a platform for web publications, supporting blogs, email newsletters and rss feeds, and integrating with federated platforms. It is useful as an information radiator in moldable development with GToolkit. "
+				"string" : "Find the location of  the lepiter pages. make a doc directory next to it."
 			},
 			{
-				"__type" : "textSnippet",
+				"__type" : "pharoSnippet",
 				"children" : {
 					"__type" : "snippets",
 					"items" : [ ]
@@ -55,7 +55,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-26T10:34:32.766816+02:00"
+						"dateAndTimeString" : "2025-10-08T12:06:32.06822+02:00"
 					}
 				},
 				"editEmail" : {
@@ -66,17 +66,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-08T12:06:10.17705+02:00"
+						"dateAndTimeString" : "2025-10-08T13:17:38.795004+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "ewlCR6L5DQCM7gR7AW1zaw=="
+					"uidString" : "mgRpkwT9DQCSgwnAA7PWUA=="
 				},
-				"paragraphStyle" : {
-					"__type" : "textStyle"
-				},
-				"string" : "[[Setting up]]\n[[Creating a post from a Lepiter page]]\n[[Logging in into my ghost database to reconnect sessions]]\n[[Posting a text with a visualization]]\n[[Save lepiter pages to doc directory]]"
+				"code" : "thisPage := thisSnippet parent.\rdatabase := thisPage database.\rlepiterDirectory := database monitor localRoot.\rdocDirectory := lepiterDirectory parent / 'doc'.\rdocDirectory ensureCreateDirectory.\rsequencer := LeExportUUIDSequencer new.\rpageLinks := LeExportPageLinksBuilder new\n\t\tdatabase: database;\n\t\thtml;\n\t\tsequencer: sequencer;\n\t\tbuild;\n\t\tlinks.\rdatabase pagesDo: [:page |\r\tcontext := LeHtmlContext new\r\t\t\tpage: page;\r\t\t\tdatabase: database;\r\t\t\tpageLinks: pageLinks;\n\t\t\tsequencer: sequencer.\r\thtml := LeHtmlPageExporter new\r\t\tcontext: context;\r\t\tpiece: LeHtmlGtBookPiece gtSinglePage;\r\t\tcontents.\r\t(docDirectory / (pageLinks linkForPage: page ifFound: [:link | link fileNameWithExtension] ifNone: ['missing.html'])) asFileReference writeStreamDo: [:w | w nextPutAll: html]]\r\t"
 			}
 		]
 	},
@@ -88,7 +85,7 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-08-26T10:34:32.71857+02:00"
+			"dateAndTimeString" : "2025-10-08T12:06:14.260788+02:00"
 		}
 	},
 	"editEmail" : {
@@ -99,15 +96,15 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-08-26T10:34:48.369203+02:00"
+			"dateAndTimeString" : "2025-10-08T12:06:14.260788+02:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "Integrating Ghost"
+		"title" : "Save lepiter pages to doc directory"
 	},
 	"uid" : {
 		"__type" : "uuid",
-		"uuid" : "2a4b4147-a2f9-0d00-8ced-caee016d736b"
+		"uuid" : "af4b5992-04fd-0d00-922b-8abc03b3d650"
 	}
 }

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logging in into my ghost database to reconnect sessions</title>
+
+    <!-- browser setup -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+    <!-- page meta information -->
+    <meta name="description" content="After the DNS record for my self hosted ghost instance owner email was unavailable,  logging in on a different machine (not really, but different startup ssd because the original had crashed) was no longer possible. 
+
+It took a long time to find out that the DNS record was missing, as mails kept on arriving for weeks later, and were forwarded to another email address that kept on receiving mail. After the DNS record was fixed and the email started working again, Ghost still refused to verify. ">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="gtoolkit book">
+    <meta property="og:title" content="Logging in into my ghost database to reconnect sessions">
+    <meta property="og:url" content="https://book.gtoolkit.com/logging-in-into-my-ghost-database-to-recon-797sjf5ku8jwxs9ongbdquga4.html">
+    <meta property="og:description" content="After the DNS record for my self hosted ghost instance owner email was unavailable,  logging in on a different machine (not really, but different startup ssd because the original had crashed) was no longer possible. 
+
+It took a long time to find out that the DNS record was missing, as mails kept on arriving for weeks later, and were forwarded to another email address that kept on receiving mail. After the DNS record was fixed and the email started working again, Ghost still refused to verify. ">
+
+    <!-- CSS styles -->
+    <link rel="stylesheet" href="assets/vendor/awesomefonts/css/all.css">
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/v1/src/css/lepiter-common.css">
+    <link rel="stylesheet" href="assets/v1/src/css/lepiter-snippets.css">
+    <link rel="stylesheet" href="assets/v1/src/css/vs.css">
+</head>
+<body>
+
+    <div class="content">
+        <div class="container min-height py-5 le-main-container">
+            <main>
+                <h1 class="le-main-title">Logging in into my ghost database to reconnect sessions</h1>
+
+                <!-- page content start -->
+
+                <div class="snippet textual-snippet text-snippet paragraphWidth">  <p>After the DNS record for my self hosted ghost instance owner email was unavailable,  logging in on a different machine (not really, but different startup ssd because the original had crashed) was no longer possible. 
+
+It took a long time to find out that the DNS record was missing, as mails kept on arriving for weeks later, and were forwarded to another email address that kept on receiving mail. After the DNS record was fixed and the email started working again, Ghost still refused to verify.   </p></div><div class="snippet textual-snippet text-snippet paragraphWidth">  <h4 id="login-in-mysql">    <a href="#login-in-mysql"> login in mysql    </a>  </h4>
+the installation for production at <a href="https://docs.ghost.org/install/ubuntu">original ghost docs</a> makes it difficult to log into mysql. What worked was </div><div class="snippet textual-snippet text-snippet paragraphWidth">  <p>mysql is installed without allowing password login by default. This way I could use the root user and root password to get full access.  </p></div><div class="snippet textual-snippet text-snippet paragraphWidth">  <p>show databases ;
+use domeinmodel_prod;
+show tables;
+select * from users;
+select id,name,password,email from users;
+select * from sessions;
+(id in user is user_id in session)
+session_data has a json cookie. for some sessions (on the other machine) that had a "verified"=true, for others it didn't
+update sessions set session_data = '&lt;&lt;old json without closing}>>,"verified=true"}' where id='theSessionIwantToChange;  </p></div><div class="snippet textual-snippet text-snippet paragraphWidth">  <p>Reloading the ghost admin session in my browser that had been throwing errors before then fixed the problem.  </p></div>
+
+                <!-- page content end -->
+            </main>
+        </div>
+    </div>
+
+    <footer class="text-center py-5 le-footer">
+        <p class="le-footer-credits">
+            Powered by <a class="le-footer-link" href="https://lepiter.com">Lepiter</a> | <a class="le-footer-link" href="https://feenk.com/privacy">Privacy Policy</a>
+        </p>
+    </footer>
+
+    <!-- scripts -->
+    <script type="text/javascript" src="assets/vendor/jquery/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/v1/src/js/datefns.min.js"></script>
+    <script type="text/javascript" src="assets/v1/src/js/highlight.pack.js"></script>
+    <script type="text/javascript" src="assets/v1/src/js/lepiter-common.js"></script>
+    <script type="text/javascript" src="assets/v1/src/js/lepiter-snippets.js"></script>
+    <script type="text/javascript" src="assets/v1/src/js/lepiter-time.js"></script>
+</body>
+</html>
