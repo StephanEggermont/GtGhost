@@ -75,7 +75,7 @@ GtGhostInstance >> testConnection [
 	credentials isEmptyOrNil
 		ifTrue: [ ^ Exception signal: 'Credentials are not set' ].
 	self setUpConnection. 
-	client url: baseUrl,'/admin/posts'.
+	client url: baseUrl,'admin/posts'.
 	^client get.
 
 ]

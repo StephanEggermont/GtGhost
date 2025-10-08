@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-26T13:15:24.273455+02:00"
+						"dateAndTimeString" : "2025-08-26T13:15:50.51184+02:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +39,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "In the settings of your ghost admin, add a custom integration.\nHere I added credentials to a file, containing the host name (without https://www.), a space, and the "
+				"string" : "In the settings of your ghost admin, add a custom integration.\nHere I added credentials to a file, containing the host name (without https://www.), a space, and the api-key (which consists of two parts, connected with a colon)."
 			},
 			{
 				"__type" : "pharoSnippet",
@@ -66,14 +66,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-26T11:14:05.629214+02:00"
+						"dateAndTimeString" : "2025-10-06T15:46:20.711432+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
 					"uidString" : "f8U7XqL5DQCToO1FAW1zaw=="
 				},
-				"code" : "ghostInstance := GtGhostInstance new.\rghostInstance readCredentialsFrom: '/Users/stephan/.integrations/ghost'.\rghostInstance testConnection"
+				"code" : "ghostInstance := GtGhostInstance new.\rghostInstance readCredentialsFrom: (FileLocator home /'.ghost/.integrations/ghost') pat.\rghostInstance testConnection"
 			}
 		]
 	},

@@ -66,14 +66,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-26T11:14:05.629214+02:00"
+						"dateAndTimeString" : "2025-10-06T15:46:22.377697+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
 					"uidString" : "f8U7XqL5DQCToO1FAW1zaw=="
 				},
-				"code" : "ghostInstance := GtGhostInstance new.\rghostInstance readCredentialsFrom: '/Users/stephan/.integrations/ghost'.\rghostInstance testConnection"
+				"code" : "ghostInstance := GtGhostInstance new.\rghostInstance readCredentialsFrom: (FileLocator home /'.ghost/.integrations/ghost') pathString.\rghostInstance testConnection"
 			}
 		]
 	},
