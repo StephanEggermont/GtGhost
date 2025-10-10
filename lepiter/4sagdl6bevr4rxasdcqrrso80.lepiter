@@ -103,14 +103,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-09T15:31:51.466912+02:00"
+						"dateAndTimeString" : "2025-10-10T18:14:59.763712+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
 					"uidString" : "yovcHhn9DQC8grllA7PWUA=="
 				},
-				"code" : "pages := thisSnippet page linkedPages.\rgetTitle := [:page | page title].\rgetState := [:page | page children first text asString withoutPrefix: 'state='  ].\rhasState := [:page | page children first text asString beginsWith: 'state='].\rstates := (pages select: [:page | (hasState value: page)] \r\tthenCollect: [:page| (getState value: page) asLowercase] ) asSet.\rstories := [:page | page children detect: [:snippet | \r\tsnippet text asString beginsWith: '###Stories'] ifFound: [:i | i\r\toutgoingTextualLinks items collect: [:each | each target]] ifNone: [#()]]"
+				"code" : "pages := thisSnippet page linkedPages.\rgetTitle := [:page | page ifNil: ['Missing page'] ifNotNil: [page title]].\rgetState := [:page | page ifNil: ['Missing page'] ifNotNil: [page children first text asString withoutPrefix: 'state='  ]].\rhasState := [:page | page children first text asString beginsWith: 'state='].\rstates := (pages select: [:page | (hasState value: page)] \r\tthenCollect: [:page| (getState value: page) asLowercase] ) asSet.\rstories := [:page | page children detect: [:snippet | \r\tsnippet text asString beginsWith: '###Stories'] ifFound: [:i | i\r\toutgoingTextualLinks items collect: [:each | each target]] ifNone: [#()]]"
 			},
 			{
 				"__type" : "pharoSnippet",
@@ -137,14 +137,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-09T15:47:25.225449+02:00"
+						"dateAndTimeString" : "2025-10-10T18:10:19.835807+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
 					"uidString" : "CGJI+xf9DQCyIuESA7PWUA=="
 				},
-				"code" : "\rview := GtMondrian new.\rview nodes \r\tstencil: [:state | |el|\r\t\tel := GtMondrianUMLClassElement withDefaultContainer \r\t\t\tlabel: state];\r\twith: states; forEach: [ :state |\r\t\tview nodes\r\t\t\tstencil: [:page| | el |\r\t\t\t\tel := GtMondrianUMLClassElement withDefaultContainer \r\t\t\t\t\tlabel: page title.\r\t\t\t\tel when: BlClickEvent do: [:e | e target phlow spawnObject: page ]] ;\r\t\twith: (pages select: [:p | (hasState value: p) and: [ state = (getState value: p)]]);\r\t\tforEach: [:page |\r\t\t\tview nodes stencil: [ :story |\r\t\t\t\tel := BlTextElement new\r\t\t\t\t\ttext: ((getTitle value: story) asRopedText\r\t\t\t\t\t\tforeground: (Color black alpha: 0.8)).\r\t\t\t\tel when: BlClickEvent do: [:e | e target phlow spawnObject: story ]] ;\r\t\t\twith: (stories value: page).\r\t\t\tview layout grid].\r\t\tview layout grid].\r\tview layout horizontal.\rview\r\t"
+				"code" : "\rview := GtMondrian new.\rview nodes \r\tstencil: [:state | |el|\r\t\tel := GtMondrianUMLClassElement withDefaultContainer \r\t\t\tlabel: state];\r\twith: states; forEach: [ :state |\r\t\tview nodes\r\t\t\tstencil: [:page| | el |\r\t\t\t\tel := GtMondrianUMLClassElement withDefaultContainer \r\t\t\t\t\tlabel: page title.\r\t\t\t\tel when: BlClickEvent do: [:e | e target phlow spawnObject: page ]] ;\r\t\twith: (pages select: [:p | (hasState value: p) and: [ state = (getState value: p)]]);\r\t\tforEach: [:page |\r\t\t\tview nodes stencil: [ :story | |aColor storyState|\r\t\t\t\taColor := (Color black alpha: 0.8).\r\t\t\t\tstoryState := getState value: story.\r\t\t\t\tstoryState = 'doing' ifTrue: [aColor := Color blue darker].\r\t\t\t\tstoryState = 'done' ifTrue: [aColor := Color green darker].\r\t\t\t\tel := BlTextElement new\r\t\t\t\t\ttext: ((getTitle value: story) asRopedText\r\t\t\t\t\t\tforeground: aColor).\r\t\t\t\tel when: BlClickEvent do: [:e | e target phlow spawnObject: story ]] ;\r\t\t\twith: (stories value: page).\r\t\t\tview layout grid].\r\t\tview layout grid].\r\tview layout horizontal.\rview\r\t"
 			},
 			{
 				"__type" : "textSnippet",

@@ -66,7 +66,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-10T18:16:51.54429+02:00"
+						"dateAndTimeString" : "2025-10-10T18:16:45.029004+02:00"
 					}
 				},
 				"uid" : {
@@ -76,7 +76,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Now there is a code skeleton for working with "
+				"string" : "Now there is a code skeleton with working"
 			}
 		]
 	},

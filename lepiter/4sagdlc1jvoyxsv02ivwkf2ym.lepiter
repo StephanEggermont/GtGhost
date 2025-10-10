@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-10T17:32:13.403283+02:00"
+						"dateAndTimeString" : "2025-10-10T18:17:58.691874+02:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +39,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "state=doing"
+				"string" : "state=done"
 			},
 			{
 				"__type" : "textSnippet",
@@ -66,7 +66,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-10T17:53:15.9061+02:00"
+						"dateAndTimeString" : "2025-10-10T18:20:33.987723+02:00"
 					}
 				},
 				"uid" : {
@@ -76,7 +76,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "###Prompt\n1Ghost uses Lexical as its post format. I need a GToolkit Smalltalk implementation that allows me to export Lepiter pages. https://lexical.dev/docs/concepts/nodes describes the nodes in Lexical. Please provide me with a smalltalk package that allows me to read and write lexical documents\n\nInterrupted when most of the code was simple accessors\n\n2I'm not interested in simple accessors. Don't describe them. GToolkit has STON support, which might help"
+				"string" : "###Prompt\n1 Ghost uses Lexical as its post format. I need a GToolkit Smalltalk implementation that allows me to export Lepiter pages. https://lexical.dev/docs/concepts/nodes describes the nodes in Lexical. Please provide me with a smalltalk package that allows me to read and write lexical documents\n\nInterrupted when most of the code was simple accessors\n\n2 I'm not interested in simple accessors. Don't describe them. GToolkit has STON support, which might help"
 			},
 			{
 				"__type" : "textSnippet",

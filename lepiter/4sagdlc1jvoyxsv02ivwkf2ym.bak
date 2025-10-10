@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-10T17:32:13.403283+02:00"
+						"dateAndTimeString" : "2025-10-10T18:17:58.691874+02:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +39,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "state=doing"
+				"string" : "state=done"
 			},
 			{
 				"__type" : "textSnippet",
@@ -140,7 +140,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-10T18:03:43.634016+02:00"
+						"dateAndTimeString" : "2025-10-10T18:04:08.086903+02:00"
 					}
 				},
 				"uid" : {
@@ -150,7 +150,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "###LLM bugs\n- switched to using #instVarNamed:put:\n  just replaced by accessors\n- made up OrderedCollection>>#addIfNotNil:\n  subclassed OrderedCollection (could have added extension method, but this is more contained)\n- the last part of the code no longer uses addIfNotNil\n- Builder misses methods for italic and strikethrough text\n- LexicalTextNode misses withText:\n- LexicalLin"
+				"string" : "###LLM bugs\n- switched to using #instVarNamed:put:\n  just replaced by accessors\n- made up OrderedCollection>>#addIfNotNil:\n  subclassed OrderedCollection (could have added extension method, but this is more contained)\n- the last part of the code no longer uses addIfNotNil\n- Builder misses methods for italic and strikethrough text\n- LexicalTextNode misses #withText:\n- LexicalLinkNode misses #withUrl:text:"
 			}
 		]
 	},

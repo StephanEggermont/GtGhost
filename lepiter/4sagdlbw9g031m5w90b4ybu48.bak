@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-09T15:13:38.790898+02:00"
+						"dateAndTimeString" : "2025-10-10T17:31:42.391109+02:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +39,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "state=testing"
+				"string" : "state=doing"
 			},
 			{
 				"__type" : "textSnippet",
@@ -66,7 +66,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-09T15:20:29.54416+02:00"
+						"dateAndTimeString" : "2025-10-10T18:11:31.427429+02:00"
 					}
 				},
 				"uid" : {
@@ -76,7 +76,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "###Stories\n[[A Story]] \n[[Another story]] \n"
+				"string" : "###Stories\n[[Use Claude to build a skeleton]] \n[[Another story]] \n[[Missing Story]]"
 			}
 		]
 	},
