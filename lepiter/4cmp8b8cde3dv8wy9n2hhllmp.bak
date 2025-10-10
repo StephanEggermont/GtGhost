@@ -66,14 +66,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-26T14:11:16.303661+02:00"
+						"dateAndTimeString" : "2025-10-06T16:22:15.444048+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
 					"uidString" : "fngSQaX5DQCR53PqAbd9SQ=="
 				},
-				"code" : "ghostInstance := GtGhostInstance new.\rghostInstance readCredentialsFrom: '/Users/stephan/.integrations/ghost'.\rghostInstance setUpConnection."
+				"code" : "ghostInstance := GtGhostInstance new.\rghostInstance readCredentialsFrom: (FileLocator home /'.ghost/.integrations/ghost') pathString.\rghostInstance setUpConnection."
 			},
 			{
 				"__type" : "textSnippet",
@@ -100,7 +100,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-26T14:15:33.586882+02:00"
+						"dateAndTimeString" : "2025-10-10T16:05:06.505154+02:00"
 					}
 				},
 				"uid" : {
@@ -110,7 +110,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Get the contents from the current Lepiter page, and convert that to Ghosts lexical format"
+				"string" : "Get the contents from the current Lepiter page, and convert that to Ghosts lexical format. Hmm,. no, let's first do the simpler thing and generate a html post"
 			},
 			{
 				"__type" : "pharoSnippet",

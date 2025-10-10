@@ -66,7 +66,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-09T11:00:37.584078+02:00"
+						"dateAndTimeString" : "2025-10-10T16:14:07.504988+02:00"
 					}
 				},
 				"uid" : {
@@ -76,7 +76,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "[[Setting up]]\n[[Creating a post from a Lepiter page]]\n[[Logging in into my ghost database to reconnect sessions]]\n[[Posting a text with a visualization]]\n[[Save lepiter pages to doc directory]]\n\n[[Wishlist]]"
+				"string" : "[[Setting up]] \n[[Creating a post from a Lepiter page]] \n[[Dealing with the lexical format]] \n[[Logging in into my ghost database to reconnect sessions]] \n[[Posting a text with a visualization]] \n[[Save lepiter pages to doc directory]] \n\n[[Wishlist]]"
 			}
 		]
 	},

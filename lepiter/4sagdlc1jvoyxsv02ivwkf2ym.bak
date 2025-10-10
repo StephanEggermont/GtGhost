@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-09T15:20:24.25968+02:00"
+						"dateAndTimeString" : "2025-10-10T17:32:13.403283+02:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +39,118 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : ""
+				"string" : "state=doing"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-10T17:32:20.241359+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-10T17:53:15.9061+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "5zdBXDH9DQCmMZ0eAkYs+w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "###Prompt\n1Ghost uses Lexical as its post format. I need a GToolkit Smalltalk implementation that allows me to export Lepiter pages. https://lexical.dev/docs/concepts/nodes describes the nodes in Lexical. Please provide me with a smalltalk package that allows me to read and write lexical documents\n\nInterrupted when most of the code was simple accessors\n\n2I'm not interested in simple accessors. Don't describe them. GToolkit has STON support, which might help"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-10T17:32:59.054038+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-10T17:33:19.175695+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "8HORXjH9DQCmgzoVAkYs+w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "###Result\nI've created a complete GToolkit Smalltalk package for reading and writing Lexical documents. Here are the key features:\nCore Components:\n\nNode hierarchy matching Lexical's structure (Root, Element, Text, Paragraph, Heading, Link, List, Code, Quote, LineBreak)\nSTON integration for JSON serialization/deserialization\nEditor State for managing complete documents\n\nKey Features:\n\nTwo-way conversion between Lexical JSON and Smalltalk objects\nLepiter integration - export Lepiter pages to Lexical format and import Lexical documents as Lepiter snippets\nBuilder API for programmatic document creation\nFile I/O support for reading and writing Lexical documents\n\nUsage patterns:\n\nBuild documents with the fluent LexicalDocumentBuilder API\nExport Lepiter pages with LexicalLepiterExporter exportPage: aPage\nImport documents with LexicalEditorState fromFile: or fromJsonString:\nConvert between formats bidirectionally\n\nThe implementation uses STON's JSON support and focuses on the essential logic without repetitive accessor methods. The node classes use instVarNamed:put: for direct instance variable access where appropriate, keeping the code concise."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-10T17:33:40.037321+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-10T18:03:43.634016+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "4s4CYTH9DQCmqC9AAkYs+w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "###LLM bugs\n- switched to using #instVarNamed:put:\n  just replaced by accessors\n- made up OrderedCollection>>#addIfNotNil:\n  subclassed OrderedCollection (could have added extension method, but this is more contained)\n- the last part of the code no longer uses addIfNotNil\n- Builder misses methods for italic and strikethrough text\n- LexicalTextNode misses withText:\n- LexicalLin"
 			}
 		]
 	},
@@ -62,12 +173,12 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-10-09T15:20:29.537564+02:00"
+			"dateAndTimeString" : "2025-10-10T17:32:10.450391+02:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "A Story"
+		"title" : "Use Claude to build a skeleton"
 	},
 	"uid" : {
 		"__type" : "uuid",

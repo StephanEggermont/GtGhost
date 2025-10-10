@@ -100,7 +100,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-26T14:15:33.586882+02:00"
+						"dateAndTimeString" : "2025-10-10T16:05:07.941161+02:00"
 					}
 				},
 				"uid" : {
@@ -110,7 +110,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Get the contents from the current Lepiter page, and convert that to Ghosts lexical format"
+				"string" : "Get the contents from the current Lepiter page, and convert that to Ghosts lexical format. Hmm,. no, let's first do the simpler thing and generate a html post."
 			},
 			{
 				"__type" : "pharoSnippet",

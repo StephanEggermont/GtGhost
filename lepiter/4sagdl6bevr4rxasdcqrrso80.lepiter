@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-09T15:07:26.219252+02:00"
+						"dateAndTimeString" : "2025-10-10T17:31:39.566195+02:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +39,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "[[First Todo]]\n[[Second Todo]]\n[[Third Todo]] \n[[No Todo]] \n[[Nieuwe todo]] "
+				"string" : "[[Build a lexical editor translation]]\n[[Second Todo]]\n[[Third Todo]] \n[[No Todo]] \n[[Nieuwe todo]] "
 			},
 			{
 				"__type" : "textSnippet",

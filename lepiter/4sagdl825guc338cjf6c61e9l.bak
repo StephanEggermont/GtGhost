@@ -40,6 +40,43 @@
 					"__type" : "textStyle"
 				},
 				"string" : "state=vibing"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-09T15:48:01.080294+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-10T17:37:42.363108+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "A6BWyRv9DQCaiPaPA7PWUA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "###Stories\n[[Use Claude to build "
 			}
 		]
 	},
