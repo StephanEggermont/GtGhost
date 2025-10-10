@@ -1,0 +1,218 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-09T11:00:45.700852+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-09T15:07:26.219252+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "B5sHxhf9DQCw6WtNA7PWUA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "[[First Todo]]\n[[Second Todo]]\n[[Third Todo]] \n[[No Todo]] \n[[Nieuwe todo]] "
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-09T11:03:19.704519+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-09T11:16:19.139924+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "5oM1zxf9DQCxhdrjA7PWUA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Let's make a view for these. Which ones do we want? Let's take the direct children of this page first"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-09T12:37:11.018418+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-09T15:31:51.466912+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "yovcHhn9DQC8grllA7PWUA=="
+				},
+				"code" : "pages := thisSnippet page linkedPages.\rgetTitle := [:page | page title].\rgetState := [:page | page children first text asString withoutPrefix: 'state='  ].\rhasState := [:page | page children first text asString beginsWith: 'state='].\rstates := (pages select: [:page | (hasState value: page)] \r\tthenCollect: [:page| (getState value: page) asLowercase] ) asSet.\rstories := [:page | page children detect: [:snippet | \r\tsnippet text asString beginsWith: '###Stories'] ifFound: [:i | i\r\toutgoingTextualLinks items collect: [:each | each target]] ifNone: [#()]]"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-09T11:15:39.138543+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-09T15:47:25.225449+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "CGJI+xf9DQCyIuESA7PWUA=="
+				},
+				"code" : "\rview := GtMondrian new.\rview nodes \r\tstencil: [:state | |el|\r\t\tel := GtMondrianUMLClassElement withDefaultContainer \r\t\t\tlabel: state];\r\twith: states; forEach: [ :state |\r\t\tview nodes\r\t\t\tstencil: [:page| | el |\r\t\t\t\tel := GtMondrianUMLClassElement withDefaultContainer \r\t\t\t\t\tlabel: page title.\r\t\t\t\tel when: BlClickEvent do: [:e | e target phlow spawnObject: page ]] ;\r\t\twith: (pages select: [:p | (hasState value: p) and: [ state = (getState value: p)]]);\r\t\tforEach: [:page |\r\t\t\tview nodes stencil: [ :story |\r\t\t\t\tel := BlTextElement new\r\t\t\t\t\ttext: ((getTitle value: story) asRopedText\r\t\t\t\t\t\tforeground: (Color black alpha: 0.8)).\r\t\t\t\tel when: BlClickEvent do: [:e | e target phlow spawnObject: story ]] ;\r\t\t\twith: (stories value: page).\r\t\t\tview layout grid].\r\t\tview layout grid].\r\tview layout horizontal.\rview\r\t"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-09T12:31:38.991811+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-09T12:31:38.991811+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "4jgSCxn9DQC5/4nUA7PWUA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : ""
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-10-09T11:00:45.681961+02:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-10-09T11:00:45.681961+02:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Wishlist"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "a05007c6-17fd-0d00-b0e8-680603b3d650"
+	}
+}

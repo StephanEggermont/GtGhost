@@ -18,7 +18,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-26T10:39:50.071628+02:00"
+						"dateAndTimeString" : "2025-10-09T15:03:46.564979+02:00"
 					}
 				},
 				"editEmail" : {
@@ -29,17 +29,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-26T10:39:59.263839+02:00"
+						"dateAndTimeString" : "2025-10-09T15:03:51.305389+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "4LYrWqL5DQCTRCPhAW1zaw=="
+					"uidString" : "me8dKxv9DQCMvzJeA7PWUA=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Ghost is a platform for web publications, supporting blogs, email newsletters and rss feeds, and integrating with federated platforms. It is useful as an information radiator in moldable development with GToolkit. "
+				"string" : "state=vibing"
 			},
 			{
 				"__type" : "textSnippet",
@@ -55,7 +55,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-26T10:34:32.766816+02:00"
+						"dateAndTimeString" : "2025-10-09T15:48:01.080294+02:00"
 					}
 				},
 				"editEmail" : {
@@ -66,17 +66,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-08T12:06:10.17705+02:00"
+						"dateAndTimeString" : "2025-10-09T15:48:21.153318+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "ewlCR6L5DQCM7gR7AW1zaw=="
+					"uidString" : "A6BWyRv9DQCaiPaPA7PWUA=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "[[Setting up]]\n[[Creating a post from a Lepiter page]]\n[[Logging in into my ghost database to reconnect sessions]]\n[[Posting a text with a visualization]]\n[[Save lepiter pages to doc directory]]"
+				"string" : "###Stories\n[[A Story]] "
 			}
 		]
 	},
@@ -88,7 +88,7 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-08-26T10:34:32.71857+02:00"
+			"dateAndTimeString" : "2025-10-09T15:03:46.542561+02:00"
 		}
 	},
 	"editEmail" : {
@@ -99,15 +99,15 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-08-26T10:34:48.369203+02:00"
+			"dateAndTimeString" : "2025-10-09T15:03:46.542561+02:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "Integrating Ghost"
+		"title" : "Nieuwe todo"
 	},
 	"uid" : {
 		"__type" : "uuid",
-		"uuid" : "2a4b4147-a2f9-0d00-8ced-caee016d736b"
+		"uuid" : "79941d2b-1bfd-0d00-8cbe-7d4003b3d650"
 	}
 }

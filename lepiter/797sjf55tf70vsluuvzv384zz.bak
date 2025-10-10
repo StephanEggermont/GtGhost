@@ -705,7 +705,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-22T15:47:39.535398+02:00"
+						"dateAndTimeString" : "2025-09-22T15:47:51.072588+02:00"
 					}
 				},
 				"uid" : {
@@ -715,7 +715,41 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "That's a pity, that set is not even half as large as the full list. We'll need to spend some more time to build the lookup function"
+				"string" : "That's a pity, that set is not even half as large as the full list. We'll need to spend some more time to build a lookup function."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-08T15:29:56.63187+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-08T15:40:26.100299+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "V+Hbagf9DQCf+chIA7PWUA=="
+				},
+				"code" : "GtNestedRectangleTreeMap new\r\ttree: projectDirectory;\r\tdeep: #directories;\r\tleaves: [:anItem | anItem files select: [:each | each extension = 'js']];\r\tcontainerElement: [:anElement :aNodeContext |\r\t\t|label scaledLabel|\r\t\taNodeContext level = 2 ifTrue: [\r\t\t\tlabel := BlTextElement new\r\t\t\t\ttext: (aNodeContext model basename asRopedText\r\t\t\t\t\tforeground: (Color black alpha: 0.8)).\r\t\t\tscaledLabel := label asScalableElement\r\t\t\t\tzIndex: 10;\r\t\t\t\tconstraintsDo: [:c |\r\t\t\t\t\tc horizontal matchParent.\r\t\t\t\t\tc vertical matchParent.\r\t\t\t\t\tc ignoreByLayout.\r\t\t\t\t\tc ignored horizontal weight: 0.2.\r\t\t\t\t\tc ignored horizontal alignCenter].\r\t\t\tanElement addChild: scaledLabel].\r\t\tanElement border: (BlBorder\r\t\t\tpaint: (Color black alpha: 0.5 / aNodeContext level)\r\t\t\t\twidth: 2).\r\t\tanElement padding: (BlInsets all: 2)];\r\tleafElement: [:aLeaf :aLeafContext | aLeaf background: Color white ] "
 			}
 		]
 	},
